@@ -12,7 +12,6 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/auth" element={<Authentication />} />
       </Route>
-      SS
     </Routes>
 
   );
