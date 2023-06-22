@@ -16,7 +16,7 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const [ formFields, setFormFields ] = useState(defaultFormFields);
   const { email, password } = formFields;
 
   const resetFormFields = () => {
@@ -30,10 +30,12 @@ const SignInForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    try {
+    try
+    {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
-    } catch (error) {
+    } catch (error)
+    {
       console.log('user sign in failed', error);
     }
   };
@@ -41,7 +43,7 @@ const SignInForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormFields({ ...formFields, [name]: value });
+    setFormFields({ ...formFields, [ name ]: value });
   };
 
   return (
